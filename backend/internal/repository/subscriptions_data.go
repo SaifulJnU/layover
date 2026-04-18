@@ -1,0 +1,90 @@
+package repository
+
+import "layover-backend/pkg/model"
+
+var SubscriptionPlans = []model.SubscriptionPlan{
+	{
+		ID:           "free",
+		Name:         "Free",
+		MonthlyPrice: 0,
+		YearlyPrice:  0,
+		Description:  "Perfect for casual travelers",
+		Color:        "#8892A4",
+		Popular:      false,
+		BonusPoints:  0,
+		Features: []string{
+			"5 trip plans per month",
+			"Basic weather info",
+			"Split expenses (up to 3 people)",
+			"Public social feed",
+			"100 reward points on signup",
+		},
+	},
+	{
+		ID:           "explorer",
+		Name:         "Explorer",
+		MonthlyPrice: 7.99,
+		YearlyPrice:  76.99,
+		Description:  "For the frequent traveler",
+		Color:        "#4F9CF9",
+		Popular:      false,
+		BonusPoints:  500,
+		Features: []string{
+			"Unlimited trip plans",
+			"AI weather analysis",
+			"Split expenses (unlimited people)",
+			"Priority social feed",
+			"500 bonus points on subscribe",
+			"Outfit recommendations",
+			"Budget planner with insights",
+		},
+	},
+	{
+		ID:           "pro",
+		Name:         "Pro",
+		MonthlyPrice: 14.99,
+		YearlyPrice:  143.99,
+		Description:  "For power travelers & groups",
+		Color:        "#9B7FFF",
+		Popular:      true,
+		BonusPoints:  1500,
+		Features: []string{
+			"Everything in Explorer",
+			"1500 bonus points on subscribe",
+			"Advanced AI trip suggestions",
+			"Group collaboration (up to 20)",
+			"Exclusive Pro rewards catalog",
+			"Early access to new features",
+			"Priority support",
+			"Monthly points booster (+200 pts)",
+		},
+	},
+	{
+		ID:           "business",
+		Name:         "Business",
+		MonthlyPrice: 29.99,
+		YearlyPrice:  287.99,
+		Description:  "For teams & travel agencies",
+		Color:        "#FFD166",
+		Popular:      false,
+		BonusPoints:  5000,
+		Features: []string{
+			"Everything in Pro",
+			"5000 bonus points on subscribe",
+			"Unlimited group members",
+			"Team dashboard & analytics",
+			"Custom branding on shared trips",
+			"API access",
+			"Dedicated account manager",
+			"SLA support (24h response)",
+		},
+	},
+}
+
+var CurrentSubscription = model.Subscription{
+	PlanID:   "free",
+	PlanName: "Free",
+	Billing:  "monthly",
+	Price:    0,
+	Status:   "active",
+}
